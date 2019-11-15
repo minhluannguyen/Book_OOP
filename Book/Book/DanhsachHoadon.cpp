@@ -60,3 +60,29 @@ int DanhsachHoadon::TinhTien()
 	}
 	return sum;
 }
+
+void DanhsachHoadon::mergeList(DanhsachHoadon DS)
+{
+	for (int i = 0; i < DS.listHD.size(); i++)
+	{
+		listHD.push_back(DS.listHD[i]);
+	}
+}
+
+void DanhsachHoadon::printList()
+{
+	if (listHD.size() > 0)
+	{
+		for (int i = 0; i < listHD.size(); i++)
+		{
+			cout << i + 1 << "_____" << endl;
+			listHD[i].printHD();
+		}
+		cout << "Total: " << TinhTien() << endl;
+	}
+	else
+	{
+		cout << "Hoa don rong!!!\n";
+		_getch();
+	}
+}

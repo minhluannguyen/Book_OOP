@@ -11,4 +11,5 @@ public:
 	void ThemSach(Sach, int);
 	void TinhTien();
 	int getTien();
+	void printHD();
 };

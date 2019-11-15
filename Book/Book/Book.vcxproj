@@ -131,6 +131,7 @@
     <ClCompile Include="Guest.cpp" />
     <ClCompile Include="HoaDon.cpp" />
     <ClCompile Include="NXB.cpp" />
+    <ClCompile Include="pch.cpp" />
     <ClCompile Include="Sach.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="TacGia.cpp" />

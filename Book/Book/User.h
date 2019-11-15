@@ -1,13 +1,16 @@
 #pragma once
 #include "Header.h"
-class User: public Guest
+class User
 {
 private:
 	string username;
 	string password;
-	int tuoi;
+	DanhsachHoadon DSHD;
 public:
 	User();
 	~User();
+	User(string, string);
+	void menu(DanhSach listBook);
+	void xemSach(DanhSach listBook);
 	void TimSach(DanhsachHoadon);
 };

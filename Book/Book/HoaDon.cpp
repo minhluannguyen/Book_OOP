@@ -22,3 +22,9 @@ int HoaDon::getTien()
 {
 	return S.getGiaTien()*Soluong;
 }
+
+void HoaDon::printHD()
+{
+	S.printBook();
+	cout << "So luong: " << Soluong << endl;
+}

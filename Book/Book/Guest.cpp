@@ -6,26 +6,27 @@ Guest::Guest()
 {
 }
 
-
 Guest::~Guest()
 {
 }
 
-void Guest::TimSach(DanhSach DS)
+void Guest::xemSach(DanhSach DS)
 {
 	system("cls");
-	int choice;
-	cout << "Xin chao quy khach!\n";
-	cout << "1. Mua sach." << endl;
-	cout << "2. Thoat chuong trinh" << endl;
+
+	DS.printList();
+	int choice = 1;
+	cout << "\nBan muon?\n";
+	cout << "1. Dang nhap neu muon mua." << endl;
+	cout << "0. Thoat.\n";
 	cout << "Lua chon cua ban: ";
 	cin >> choice;
+	cin.ignore();
 
-	if (choice == 2)
+	if (choice == 1)
+	{
+		DangNhap(DS);
 		return;
-	int i = 0;
-	DanhsachHoadon BillList;
-	//BillList.ThemDanhSach(DS);
-	User us;
-	us.TimSach(BillList);
+	}
+	return;
 }

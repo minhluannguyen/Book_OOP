@@ -9,5 +9,7 @@ public:
 	~DanhsachHoadon();
 	void inputDSHD(DanhSach&);
 	int TinhTien();
+	void mergeList(DanhsachHoadon DS);
+	void printList();
 };
 

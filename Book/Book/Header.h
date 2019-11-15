@@ -18,4 +18,7 @@ using namespace std;
 #include "NXB.h"
 #include "TacGia.h"
 
+void mainMenu(DanhSach &DS);
+void DangNhap(DanhSach listBook);
+
 #endif

@@ -36,7 +36,7 @@ void DanhSach::printList()
 	int n = listBook.size();
 	for (int i = 0; i < n; i++)
 	{
-		cout << i << ". \n";
+		cout << i + 1 << ". \n";
 		listBook[i].printBook();
 	}
 }
