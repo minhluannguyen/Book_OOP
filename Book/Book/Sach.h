@@ -1,5 +1,10 @@
 #ifndef SACH_H_
 #define SACH_H_
+
+#include <iostream>
+#include <string>
+using namespace std;
+
 class Sach
 {
 private:
@@ -8,6 +13,10 @@ private:
 	string NXB;
 	string tacGia;
 	int giaTien;
+
+	bool hidNXB;
+	bool hidtacGia;
+	bool hide;
 public:
 	Sach();
 	~Sach();
@@ -22,12 +31,21 @@ public:
 	string getTacGia();
 	string getNXB();
 	int getGiaTien();
+	bool is_hideNXB();
+	bool is_hideTG();
+	bool is_hideSach();
 
 	void setGiaTien(int);
-	void setTenSach(char*);
-	void setISBN(char*);
-	void setTacGia(char* s);
-	void setNXB(char* s);
+	void setTenSach(string);
+	void setISBN(string);
+	void setTacGia(string);
+	void setNXB(string);
+	void hideNXB();
+	void unhideNXB();
+	void hideTG();
+	void unhideTG();
+	void hideBook();
+	void unhideBook();
 };
 
 #endif

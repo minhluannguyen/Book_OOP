@@ -1,6 +1,4 @@
-#include "Header.h"
-
-
+#include "HoaDon.h"
 
 HoaDon::HoaDon()
 {

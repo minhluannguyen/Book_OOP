@@ -1,17 +1,25 @@
 #pragma once
-#include "Header.h"
-class TacGia
+#include <string>
+using namespace std;
+#include "TaiKhoan.h"
+#include "DanhSach.h"
+
+class TacGia: public TaiKhoan
 {
-protected:
-	string UserName;
-	string PassWord;
-	DanhSach ListBook;
+private:
+	string tenTG;
+	vector<Sach*> ListBook;
 public:
 	TacGia();
 	~TacGia();
+	TacGia(TacGia&);
 	TacGia(string, string);
-	void ThemSach();
-	void XoaSach();
-	void SuaSach();
+	TacGia(string, string, string, DanhSach&);
+	bool verify(string, string);
+	void menu(DanhSach&);
+	void ThemSachTG(DanhSach&);
+	void XoaSachTG(DanhSach&);
+	void SuaSachTG(DanhSach&);
+	void updateList(DanhSach&);
 };
 

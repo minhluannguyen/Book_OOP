@@ -3,6 +3,10 @@
 void main()
 {
 	DanhSach DS;
-	DS.inputBook();
+	//vector<TaiKhoan*> vtTK;
+	//DS.inputBook();
+	//char a[] = "account.txt";
+	//vtTK = readFileTK(a);
+	DS.readBookFile("BookList.txt");
 	mainMenu(DS);
 }

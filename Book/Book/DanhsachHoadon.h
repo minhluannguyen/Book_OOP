@@ -1,5 +1,9 @@
 #pragma once
-#include "Header.h"
+#include <vector>
+using namespace std;
+
+#include "DanhSach.h"
+#include "HoaDon.h"
 class DanhsachHoadon
 {
 private:

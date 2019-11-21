@@ -4,14 +4,19 @@ User::User()
 {
 }
 
+User::User(const User &U)
+{
+	DSHD = U.DSHD;
+}
+
 User::~User()
 {
 }
 
 User::User(string name, string pass)
 {
-	username = name;
-	password = pass;
+	UserName = name;
+	PassWord = pass;
 }
 
 void User::xemSach(DanhSach listBook)
@@ -21,7 +26,7 @@ void User::xemSach(DanhSach listBook)
 	{
 		system("cls");
 		listBook.printList();
-		cout << "Ban muon? ";
+		cout << "\nBan muon?\n";
 		cout << "1. Chon sach." << endl;
 		cout << "0. Quay lai.\n";
 		cout << "Lua chon cua ban: ";
@@ -92,9 +97,9 @@ void User::TimSach(DanhsachHoadon BillList)
 			int tmpTuoi;
 			string tmp;
 			fi >> tmp;
-			utmp.username = tmp;
+			utmp.UserName = tmp;
 			fi >> tmp;
-			utmp.password = tmp;
+			utmp.PassWord = tmp;
 
 			DSUser.push_back(utmp);
 		}
@@ -113,9 +118,9 @@ void User::TimSach(DanhsachHoadon BillList)
 		vector<User> ::iterator it;
 		for (it = DSUser.begin(); it != DSUser.end(); ++it)
 		{
-			if ((*it).username == tmpName)
+			if ((*it).UserName == tmpName)
 			{
-				if ((*it).password == tmpPass)
+				if ((*it).PassWord == tmpPass)
 				{
 					isCorrect = true;
 					break;

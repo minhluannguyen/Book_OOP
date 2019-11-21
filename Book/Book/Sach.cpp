@@ -1,8 +1,11 @@
-#include "Header.h"
+#include "Sach.h"
 
 Sach::Sach()
 {
 	giaTien = -1;
+	hidNXB = false;
+	hidtacGia = false;
+	hide = false;
 }
 
 Sach::Sach(const Sach& book)
@@ -12,6 +15,10 @@ Sach::Sach(const Sach& book)
 	NXB = book.NXB;
 	tacGia = book.tacGia;
 	giaTien = book.giaTien;
+
+	hidNXB = book.hidNXB;
+	hidtacGia = book.hidtacGia;
+	hide = book.hide;
 }
 
 Sach::Sach(char* name, char* code, char* publish, char* author, int price)
@@ -31,6 +38,9 @@ Sach& Sach::operator=(const Sach& book)
 	this->tacGia = book.tacGia;
 	this->giaTien = book.giaTien;
 
+	this->hidNXB = book.hidNXB;
+	this->hidtacGia = book.hidtacGia;
+	this->hide = book.hide;
 	return *this;
 }
 
@@ -52,21 +62,24 @@ void Sach::printBook()
 {
 	cout << "Ten sach: " << tenSach << endl;
 	cout << "ISBN: " << ISBN << endl;
-	cout << "NXB: " << NXB << endl;
-	cout << "Tac gia: " << tacGia << endl;
+	if (hidNXB == false)
+		cout << "NXB: " << NXB << endl;
+	if (hidtacGia == false)
+		cout << "Tac gia: " << tacGia << endl;
 	cout << "Gia tien: " << giaTien << endl;
 }
 
 void Sach::inputSach()
 {
+	cin.ignore();
 	cout << "Ten sach: ";
-	cin >> tenSach;
+	getline(cin, tenSach);
 	cout << "ISBN: ";
-	cin >> ISBN;
+	getline(cin, ISBN);
 	cout << "NXB: ";
-	cin >> NXB;
+	getline(cin, NXB);
 	cout << "Tac gia: ";
-	cin >> tacGia;
+	getline(cin, tacGia);
 	cout << "Gia tien: ";
 	cin >> giaTien;
 	cin.ignore();
@@ -86,28 +99,71 @@ int Sach::getGiaTien()
 {
 	return giaTien;
 }
+bool Sach::is_hideNXB()
+{
+	return hidNXB;
+}
+
+bool Sach::is_hideTG()
+{
+	return hidtacGia;
+}
+bool Sach::is_hideSach()
+{
+	return hide;
+}
 
 void Sach::setGiaTien(int n)
 {
 	giaTien = n;
 }
 
-void Sach::setTenSach(char* s)
+void Sach::setTenSach(string s)
 {
 	tenSach = s;
 }
 
-void Sach::setISBN(char* s)
+void Sach::setISBN(string s)
 {
 	ISBN = s;
 }
 
-void Sach::setTacGia(char* s)
+void Sach::setTacGia(string s)
 {
 	tacGia = s;
 }
 
-void Sach::setNXB(char* s)
+void Sach::setNXB(string s)
 {
 	NXB = s;
+}
+
+void Sach::hideNXB()
+{
+	hidNXB = true;
+}
+
+void Sach::unhideNXB()
+{
+	hidNXB = false;
+}
+
+void Sach::hideTG()
+{
+	hidtacGia = true;
+}
+
+void Sach::unhideTG()
+{
+	hidtacGia = false;
+}
+
+void Sach::hideBook()
+{
+	hide = true;
+}
+
+void Sach::unhideBook()
+{
+	hide = false;
 }

@@ -1,19 +1,28 @@
 #pragma once
-#include "Header.h"
-class NXB
+
+//#include <string>
+//using namespace std;
+
+#include "TaiKhoan.h"
+#include "DanhSach.h"
+//#include "Header.h"
+
+class NXB :public TaiKhoan
 {
-protected:
-	string UserName;
-	string PassWord;
-	DanhSach ListBook;
+private:
+	string tenNXB;
+	vector<Sach*> ListBook;
 public:
 	NXB();
 	~NXB();
+	NXB(NXB&);
 	NXB(string, string);
+	NXB(string, string, string, DanhSach&);
 	bool verify(string, string);
-	void ThemSach();
-	void XoaSach();
-	void SuaSach();
-	void printList();
+	void menu(DanhSach&);
+	void ThemSachNXB(DanhSach&);
+	void XoaSachNXB(DanhSach&);
+	void SuaSachNXB(DanhSach&);
+	void updateList(DanhSach&);
 };
 

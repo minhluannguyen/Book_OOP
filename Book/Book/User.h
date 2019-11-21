@@ -1,14 +1,20 @@
 #pragma once
-#include "Header.h"
-class User
+
+#include <fstream>
+#include <conio.h>
+using namespace std;
+
+#include "TaiKhoan.h"
+#include "DanhsachHoadon.h"
+
+class User: public TaiKhoan
 {
 private:
-	string username;
-	string password;
 	DanhsachHoadon DSHD;
 public:
 	User();
 	~User();
+	User(const User&);
 	User(string, string);
 	void menu(DanhSach listBook);
 	void xemSach(DanhSach listBook);

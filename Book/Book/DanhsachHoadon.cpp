@@ -1,4 +1,5 @@
-#include "Header.h"
+#include "DanhsachHoadon.h"
+#include <conio.h>
 
 DanhsachHoadon::DanhsachHoadon()
 {

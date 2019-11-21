@@ -1,7 +1,10 @@
-#ifndef DANHSACH_H_
-#define DANHSACH_H_
+#pragma once
 
-#include "Header.h"
+#include <vector>
+#include <fstream>
+#include <string>
+using namespace std;
+#include "Sach.h"
 
 class DanhSach
 {
@@ -11,7 +14,9 @@ public:
 	DanhSach();
 	~DanhSach();
 	DanhSach(const DanhSach&);
+	void addBook(Sach);
 	void inputBook();
+	void readBookFile(string);
 	void printList();
 	int searchBook_name(char*);
 	int searchBook_ISBN(char*);
@@ -19,7 +24,6 @@ public:
 	void updatePrice(int, int);
 	DanhSach& operator = (DanhSach&);
 	void updateBook(Sach, int);
-	Sach getBook(int);
+	Sach &getBook(int);
+	int getSize();
 };
-
-#endif

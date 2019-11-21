@@ -1,11 +1,8 @@
-#include "Header.h"
-
-
+#include "DanhSach.h"
 
 DanhSach::DanhSach()
 {
 }
-
 
 DanhSach::~DanhSach()
 {
@@ -14,6 +11,11 @@ DanhSach::~DanhSach()
 DanhSach::DanhSach(const DanhSach& DS)
 {
 	listBook = DS.listBook;
+}
+
+void DanhSach::addBook(Sach S)
+{
+	listBook.push_back(S);
 }
 
 void DanhSach::inputBook()
@@ -29,6 +31,35 @@ void DanhSach::inputBook()
 		tmp.inputSach();
 		listBook.push_back(tmp);
 	}
+}
+
+void DanhSach::readBookFile(string filename)
+{
+	ifstream fi(filename);
+	int n, cost;
+	if (fi.is_open())
+	{
+		fi >> n;
+		fi.ignore();
+		for (int i = 0; i < n; i++)
+		{
+			Sach tmpS;
+			string tmp;
+			getline(fi, tmp);
+			tmpS.setTenSach(tmp);
+			getline(fi, tmp);
+			tmpS.setISBN(tmp);
+			getline(fi, tmp);
+			tmpS.setNXB(tmp);
+			getline(fi, tmp);
+			tmpS.setTacGia(tmp);
+			fi >> cost;
+			fi.ignore();
+			tmpS.setGiaTien(cost);
+			listBook.push_back(tmpS);
+		}
+	}
+	fi.close();
 }
 
 void DanhSach::printList()
@@ -91,7 +122,7 @@ void DanhSach::deleteBook(int id)
 {
 	vector<Sach> ::iterator it;
 	it = listBook.begin();
-	for (int i = 0 ; i <= id; i++)
+	for (int i = 0 ; i < id; i++)
 	{
 		it++;
 	}
@@ -115,7 +146,12 @@ void DanhSach::updateBook(Sach s, int id)
 	listBook[id] = s;
 }
 
-Sach DanhSach::getBook(int id)
+Sach &DanhSach::getBook(int id)
 {
 	return listBook[id];
+}
+
+int DanhSach::getSize()
+{
+	return listBook.size();
 }
