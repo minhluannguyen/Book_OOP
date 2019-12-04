@@ -115,26 +115,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Admin.h" />
     <ClInclude Include="DanhSach.h" />
     <ClInclude Include="DanhsachHoadon.h" />
     <ClInclude Include="Guest.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="HoaDon.h" />
+    <ClInclude Include="Messenge.h" />
     <ClInclude Include="NXB.h" />
     <ClInclude Include="Sach.h" />
     <ClInclude Include="TacGia.h" />
+    <ClInclude Include="TaiKhoan.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Admin.cpp" />
     <ClCompile Include="DanhSach.cpp" />
     <ClCompile Include="DanhsachHoadon.cpp" />
     <ClCompile Include="Guest.cpp" />
     <ClCompile Include="HoaDon.cpp" />
+    <ClCompile Include="Messenge.cpp" />
     <ClCompile Include="NXB.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Sach.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="TacGia.cpp" />
+    <ClCompile Include="TaiKhoan.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -17,6 +17,10 @@ using namespace std;
 //#include "TacGia.h"
 //#include "Admin.h"
 
-//vector<TaiKhoan*> readFileTK(char* filename);
-void mainMenu(DanhSach &DS);
-void DangNhap(DanhSach listBook);
+vector<TaiKhoan*> readFileTK(char* filename, DanhSach &DS);
+void createNewAcc(vector<TaiKhoan*> &TK);
+//void mainMenu(DanhSach &DS);
+void mainMenu(DanhSach &DS, vector<TaiKhoan*> &TK);
+void DangNhap(DanhSach &listBook, vector<TaiKhoan*> &tk);
+void writeFileTaiKhoan(string filename, vector<TaiKhoan*> TK);
+//void DangNhap(DanhSach listBook);

@@ -36,7 +36,7 @@ void DanhSach::inputBook()
 void DanhSach::readBookFile(string filename)
 {
 	ifstream fi(filename);
-	int n, cost;
+	int n, cost, hid;
 	if (fi.is_open())
 	{
 		fi >> n;
@@ -49,17 +49,46 @@ void DanhSach::readBookFile(string filename)
 			tmpS.setTenSach(tmp);
 			getline(fi, tmp);
 			tmpS.setISBN(tmp);
+			fi >> hid;
+			if (hid == 0)
+				tmpS.unhideNXB();
+			else
+				tmpS.hideNXB();
+			fi.ignore();
 			getline(fi, tmp);
 			tmpS.setNXB(tmp);
+
+			fi >> hid;
+			if (hid == 0)
+				tmpS.unhideTG();
+			else
+				tmpS.hideTG();
+			fi.ignore();
 			getline(fi, tmp);
 			tmpS.setTacGia(tmp);
+
 			fi >> cost;
 			fi.ignore();
 			tmpS.setGiaTien(cost);
+
 			listBook.push_back(tmpS);
 		}
 	}
 	fi.close();
+}
+
+void DanhSach::saveBookFile(string filename)
+{
+	ofstream os(filename);
+	if (os.is_open())
+	{
+		os << listBook.size() << endl;
+		for (int i = 0; i < listBook.size(); i++)
+		{
+			os << listBook[i];
+		}
+	}
+	os.close();
 }
 
 void DanhSach::printList()

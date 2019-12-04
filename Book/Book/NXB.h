@@ -14,7 +14,7 @@ private:
 	vector<Sach*> ListBook;
 public:
 	NXB();
-	~NXB();
+	virtual ~NXB();
 	NXB(NXB&);
 	NXB(string, string);
 	NXB(string, string, string, DanhSach&);
@@ -24,5 +24,8 @@ public:
 	void XoaSachNXB(DanhSach&);
 	void SuaSachNXB(DanhSach&);
 	void updateList(DanhSach&);
+	virtual string getNameClass();
+	virtual string getTen();
+	virtual void setTen(string);
 };
 

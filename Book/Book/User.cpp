@@ -6,6 +6,8 @@ User::User()
 
 User::User(const User &U)
 {
+	UserName = U.UserName;
+	PassWord = U.PassWord;
 	DSHD = U.DSHD;
 }
 
@@ -63,6 +65,7 @@ void User::menu(DanhSach listBook)
 		cout << "Xin chao quy khach!\n";
 		cout << "1. Xem sach." << endl;
 		cout << "2. Xem danh sach hoa don." << endl;
+		cout << "3. Tin nhan." << endl;
 		cout << "0. Dang xuat.\n";
 		cout << "Lua chon cua ban: ";
 		cin >> choice;
@@ -79,9 +82,13 @@ void User::menu(DanhSach listBook)
 			DSHD.printList();
 			_getch();
 		}
+		if (choice == 3)
+		{
+
+		}
 	}
 }
-
+/*
 void User::TimSach(DanhsachHoadon BillList)
 {
 	system("cls");
@@ -93,7 +100,7 @@ void User::TimSach(DanhsachHoadon BillList)
 		fi >> n;
 		for (int i = 0; i < n; i++)
 		{
-			User utmp;
+			//User utmp;
 			int tmpTuoi;
 			string tmp;
 			fi >> tmp;
@@ -150,4 +157,19 @@ void User::TimSach(DanhsachHoadon BillList)
 	{
 		return;
 	}
+}
+*/
+string User::getNameClass()
+{
+	return "User";
+}
+
+string User::getTen()
+{
+	return "";
+}
+
+void User::setTen(string)
+{
+
 }

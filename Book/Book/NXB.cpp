@@ -155,3 +155,18 @@ void NXB::updateList(DanhSach &DS)
 			ListBook.push_back(&DS.getBook(i));
 	}
 }
+
+string NXB::getNameClass()
+{
+	return "NXB";
+}
+
+string NXB::getTen()
+{
+	return tenNXB;
+}
+
+void NXB::setTen(string s)
+{
+	tenNXB = s;
+}

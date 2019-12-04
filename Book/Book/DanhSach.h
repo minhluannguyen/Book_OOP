@@ -17,6 +17,7 @@ public:
 	void addBook(Sach);
 	void inputBook();
 	void readBookFile(string);
+	void saveBookFile(string);
 	void printList();
 	int searchBook_name(char*);
 	int searchBook_ISBN(char*);

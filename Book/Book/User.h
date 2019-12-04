@@ -13,10 +13,13 @@ private:
 	DanhsachHoadon DSHD;
 public:
 	User();
-	~User();
+	virtual ~User();
 	User(const User&);
 	User(string, string);
 	void menu(DanhSach listBook);
 	void xemSach(DanhSach listBook);
-	void TimSach(DanhsachHoadon);
+	//void TimSach(DanhsachHoadon);
+	virtual string getNameClass();
+	virtual string getTen();
+	virtual void setTen(string);
 };

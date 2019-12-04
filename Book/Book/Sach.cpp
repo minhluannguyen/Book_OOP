@@ -167,3 +167,21 @@ void Sach::unhideBook()
 {
 	hide = false;
 }
+
+ostream &operator << (ostream &os, Sach &S)
+{
+	os << S.tenSach << endl;
+	os << S.ISBN << endl;
+	if (S.hidNXB == false)
+		os << 0 << endl;
+	else
+		os << 1 << endl;
+	os << S.NXB << endl;
+	if (S.hidtacGia == false)
+		os << 0 << endl;
+	else
+		os << 1 << endl;
+	os << S.tacGia << endl;
+	os << S.giaTien << endl;
+	return os;
+}

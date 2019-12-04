@@ -8,5 +8,5 @@ class Guest
 public:
 	Guest();
 	~Guest();
-	void xemSach(DanhSach);
+	void xemSach(DanhSach&, vector<TaiKhoan*> &TK);
 };

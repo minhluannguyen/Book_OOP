@@ -2,6 +2,7 @@
 #define SACH_H_
 
 #include <iostream>
+#include <fstream>
 #include <string>
 using namespace std;
 
@@ -46,6 +47,8 @@ public:
 	void unhideTG();
 	void hideBook();
 	void unhideBook();
+
+	friend ostream &operator << (ostream&, Sach&);
 };
 
 #endif

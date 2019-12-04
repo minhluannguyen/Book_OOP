@@ -155,3 +155,18 @@ void TacGia::updateList(DanhSach &DS)
 			ListBook.push_back(&DS.getBook(i));
 	}
 }
+
+string TacGia::getNameClass()
+{
+	return "TacGia";
+}
+
+string TacGia::getTen()
+{
+	return tenTG;
+}
+
+void TacGia::setTen(string s)
+{
+	tenTG = s;
+}

@@ -1,0 +1,18 @@
+﻿  Admin.cpp
+  DanhSach.cpp
+e:\hoc tap\study\năm hai\oop\th\git_bt\book_oop\book\book\danhsach.cpp(28): warning C4101: 'num': unreferenced local variable
+  DanhsachHoadon.cpp
+e:\hoc tap\study\năm hai\oop\th\git_bt\book_oop\book\book\danhsachhoadon.cpp(67): warning C4018: '<': signed/unsigned mismatch
+e:\hoc tap\study\năm hai\oop\th\git_bt\book_oop\book\book\danhsachhoadon.cpp(77): warning C4018: '<': signed/unsigned mismatch
+  Guest.cpp
+  NXB.cpp
+  Source.cpp
+e:\hoc tap\study\năm hai\oop\th\git_bt\book_oop\book\book\source.cpp(4): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  TacGia.cpp
+  User.cpp
+e:\hoc tap\study\năm hai\oop\th\git_bt\book_oop\book\book\user.cpp(97): warning C4101: 'tmpTuoi': unreferenced local variable
+  pch.cpp
+  Generating Code...
+e:\hoc tap\study\năm hai\oop\th\git_bt\book_oop\book\book\danhsach.cpp(114): warning C4717: 'DanhSach::operator=': recursive on all control paths, function will cause runtime stack overflow
+e:\hoc tap\study\năm hai\oop\th\git_bt\book_oop\book\book\danhsach.cpp(113): warning C4172: returning address of local variable or temporary: tmp
+  Book.vcxproj -> E:\Hoc tap\Study\Năm hai\OOP\TH\Git_BT\Book_OOP\Book\Debug\Book.exe

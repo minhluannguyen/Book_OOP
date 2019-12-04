@@ -11,7 +11,7 @@ Guest::~Guest()
 {
 }
 
-void Guest::xemSach(DanhSach DS)
+void Guest::xemSach(DanhSach &DS, vector<TaiKhoan*> &TK)
 {
 	system("cls");
 
@@ -26,7 +26,7 @@ void Guest::xemSach(DanhSach DS)
 
 	if (choice == 1)
 	{
-		DangNhap(DS);
+		DangNhap(DS, TK);
 		return;
 	}
 	return;

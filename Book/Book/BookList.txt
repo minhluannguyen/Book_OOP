@@ -1,0 +1,15 @@
+2
+Lich su khan hoang mien Nam
+SN0001
+0
+Tre
+0
+Son Nam
+60000
+Nhap mon lap trinh
+VNCH01
+0
+KHTN
+0
+Nguyen Van Thieu
+60000

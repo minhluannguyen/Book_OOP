@@ -11,7 +11,7 @@ private:
 	vector<Sach*> ListBook;
 public:
 	TacGia();
-	~TacGia();
+	virtual ~TacGia();
 	TacGia(TacGia&);
 	TacGia(string, string);
 	TacGia(string, string, string, DanhSach&);
@@ -21,5 +21,8 @@ public:
 	void XoaSachTG(DanhSach&);
 	void SuaSachTG(DanhSach&);
 	void updateList(DanhSach&);
+	virtual string getNameClass();
+	virtual string getTen();
+	virtual void setTen(string);
 };
 
