@@ -56,7 +56,7 @@ void User::xemSach(DanhSach listBook)
 	}
 }
 
-void User::menu(DanhSach listBook)
+void User::menu(DanhSach &listBook, vector<TaiKhoan*> &TK)
 {
 	int choice = 1;
 	while (choice != 0)
@@ -80,11 +80,10 @@ void User::menu(DanhSach listBook)
 		{
 			system("cls");
 			DSHD.printList();
-			_getch();
 		}
 		if (choice == 3)
 		{
-
+			messMenu(TK);
 		}
 	}
 }

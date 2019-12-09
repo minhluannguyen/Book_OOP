@@ -86,7 +86,7 @@ void Admin::UnHideTG(DanhSach &DS)
 	DS.getBook(n - 1).unhideTG();
 }
 
-void Admin::menu(DanhSach &DS)
+void Admin::menu(DanhSach &DS, vector<TaiKhoan*> &TK)
 {
 	int choice = 1;
 	while (choice != 0)
@@ -99,6 +99,8 @@ void Admin::menu(DanhSach &DS)
 		cout << "4. Hien NXB." << endl;
 		cout << "5. Hien tac gia." << endl;
 		cout << "6. In danh sach." << endl;
+		cout << "7. Tin nhan." << endl;
+		cout << "8. Xoa tai khoan" << endl;
 		cout << "0. Dang xuat.\n";
 		cout << "Lua chon cua ban: ";
 		cin >> choice;
@@ -130,6 +132,14 @@ void Admin::menu(DanhSach &DS)
 			DS.printList();
 			_getch();
 		}
+		if (choice == 7)
+		{
+			messMenu(TK);
+		}
+		if (choice == 8)
+		{
+			deleteAcc(TK);
+		}
 	}
 }
 
@@ -145,3 +155,58 @@ string Admin::getTen()
 
 void Admin::setTen(string)
 {}
+
+void Admin::deleteAcc(vector<TaiKhoan*>& TK)
+{
+	string user, pass;
+	cin.ignore();
+	cout << "Nhap username tai khoan muon xoa: ";
+	getline(cin, user);
+
+	bool ok = false;
+	vector<TaiKhoan*>::iterator it;
+	for (it = TK.begin(); it != TK.end(); it++)
+	{
+		if ((*it)->getUsername() == user)
+		{
+			ok = true;
+			break;
+		}
+	}
+
+	if (!ok)
+	{
+		cout << "Khong ton tai tai khoan nay!!!";
+		_getch();
+		return;
+	}
+
+	cout << "Nhap lai mat khau cua ban de xac nhan: ";
+	getline(cin, pass);
+
+	if (!verify(UserName, pass))
+	{
+		cout << "Sai mat khau!!!";
+		_getch();
+		return;
+	}
+	
+	cout << "Xac nhan lan cuoi: Ban co that su muon xoa tai khoan nay?\n";
+	cout << "1. Co.\n";
+	cout << "2. Khong.\n";
+	cout << "Xac nhan cua ban: ";
+	int choice;
+	cin >> choice;
+
+	if (choice == 1)
+	{
+		TK.erase(it);
+		cout << "Tai khoan da duoc xoa!";
+		_getch();
+	}
+	else
+	{
+		cout << "Nhan phim bat ky de tiep tuc ...";
+		_getch();
+	}
+}

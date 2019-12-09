@@ -19,7 +19,7 @@ public:
 	NXB(string, string);
 	NXB(string, string, string, DanhSach&);
 	bool verify(string, string);
-	void menu(DanhSach&);
+	virtual void menu(DanhSach&, vector<TaiKhoan*>&);
 	void ThemSachNXB(DanhSach&);
 	void XoaSachNXB(DanhSach&);
 	void SuaSachNXB(DanhSach&);

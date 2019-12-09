@@ -12,14 +12,19 @@ private:
 	string nguoiNhan;
 	string nguoiGui;
 	string Mess;
-	time_t date;
 public:
 	Messenge();
-	Messenge(string, string, string, time_t);
+	Messenge(string, string, string);
 	~Messenge();
 	void setNguoiNhan(string);
 	void setNguoiGui(string);
 	void setTinNhan(string);
-	void setTime(time_t);
+
+	string getNguoiNhan();
+	string getNguoiGui();
+	string getMess();
+
+	friend ostream &operator<<(ostream&, Messenge&);
+	friend istream &operator>>(istream&, Messenge&);
 };
 

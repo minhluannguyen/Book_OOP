@@ -7,9 +7,9 @@ Tre
 Son Nam
 60000
 Nhap mon lap trinh
-VNCH01
+KHTN01
 0
 KHTN
 0
-Nguyen Van Thieu
+Tran Dan Thu
 60000

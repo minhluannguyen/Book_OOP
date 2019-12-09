@@ -16,7 +16,7 @@ public:
 	TacGia(string, string);
 	TacGia(string, string, string, DanhSach&);
 	bool verify(string, string);
-	void menu(DanhSach&);
+	virtual void menu(DanhSach&, vector<TaiKhoan*>&);
 	void ThemSachTG(DanhSach&);
 	void XoaSachTG(DanhSach&);
 	void SuaSachTG(DanhSach&);

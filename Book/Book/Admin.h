@@ -12,7 +12,7 @@ public:
 	Admin(Admin &);
 	Admin(string, string);
 	virtual ~Admin();
-	void menu(DanhSach&);
+	virtual void menu(DanhSach&, vector<TaiKhoan*>&);
 	void ThemSach(DanhSach&);
 	void HideNXB(DanhSach&);
 	void HideTG(DanhSach&);
@@ -21,5 +21,7 @@ public:
 	virtual string getNameClass();
 	virtual string getTen();
 	virtual void setTen(string);
+
+	void deleteAcc(vector<TaiKhoan*>&);
 };
 

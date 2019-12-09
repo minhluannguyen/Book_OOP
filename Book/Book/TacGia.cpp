@@ -34,7 +34,7 @@ bool TacGia::verify(string name, string pass)
 	return false;
 }
 
-void TacGia::menu(DanhSach &DS)
+void TacGia::menu(DanhSach &DS, vector<TaiKhoan*> &TK)
 {
 	int choice = 1;
 	while (choice != 0)
@@ -44,6 +44,7 @@ void TacGia::menu(DanhSach &DS)
 		cout << "1. Them sach." << endl;
 		cout << "2. Xoa sach." << endl;
 		cout << "3. Sua sach." << endl;
+		cout << "4. Tin nhan." << endl;
 		cout << "0. Dang xuat.\n";
 		cout << "Lua chon cua ban: ";
 		cin >> choice;
@@ -61,6 +62,10 @@ void TacGia::menu(DanhSach &DS)
 		if (choice == 3)
 		{
 			SuaSachTG(DS);
+		}
+		if (choice == 4)
+		{
+			messMenu(TK);
 		}
 	}
 }

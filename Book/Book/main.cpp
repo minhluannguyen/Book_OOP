@@ -16,6 +16,7 @@ void main()
 	vtTK = readFileTK(a, DS);
 	mainMenu(DS, vtTK);
 	DS.saveBookFile("BookList.txt");
+	writeFileTaiKhoan("account.txt", vtTK);
 	//delete[]ad;
 }
 

@@ -35,7 +35,7 @@ bool NXB::verify(string name, string pass)
 	return false;
 }
 
-void NXB::menu(DanhSach &DS)
+void NXB::menu(DanhSach &DS, vector<TaiKhoan*> &TK)
 {
 	int choice = 1;
 	while (choice != 0)
@@ -45,6 +45,7 @@ void NXB::menu(DanhSach &DS)
 		cout << "1. Them sach." << endl;
 		cout << "2. Xoa sach." << endl;
 		cout << "3. Sua sach." << endl;
+		cout << "4. Tin nhan." << endl;
 		cout << "0. Dang xuat.\n";
 		cout << "Lua chon cua ban: ";
 		cin >> choice;
@@ -62,6 +63,10 @@ void NXB::menu(DanhSach &DS)
 		if (choice == 3)
 		{
 			SuaSachNXB(DS);
+		}
+		if (choice == 4)
+		{
+			messMenu(TK);
 		}
 	}
 }

@@ -85,7 +85,7 @@ vector<TaiKhoan*> readFileTK(char* filename, DanhSach &DS)
 							TaiKhoan* ad = new Admin(tmpuser, tmppass);
 							tmpVec.push_back(ad);
 						}
-
+			tmpVec[i]->readFileMess();
 		}
 	}
 	fi.close();
@@ -108,9 +108,9 @@ void DangNhap(DanhSach &listBook, vector<TaiKhoan*> &tk)
 	cout << "Password: ";
 	getline(cin, password);
 
-	int n = tk.size();
+	//int n = tk.size();
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < tk.size(); i++)
 	{
 		tmptype = tk[i]->getNameClass();
 
@@ -119,30 +119,33 @@ void DangNhap(DanhSach &listBook, vector<TaiKhoan*> &tk)
 			ok = false;
 			cout << "Dang nhap thanh cong!!!!\n";
 			_getch();
+			tk[i]->menu(listBook, tk);
+			/*
 			if (tmptype == "User")
 			{
 				User us(username, password);
-				us.menu(listBook);
+				us.menu(listBook, tk);
 			}
 			else
 				if (tmptype == "TacGia")
 				{
 					tmpname = tk[i]->getTen();
 					TacGia tg(tmpname, username, password, listBook);
-					tg.menu(listBook);
+					tg.menu(listBook, tk);
 				}
 				else
 					if (tmptype == "NXB")
 					{
 						tmpname = tk[i]->getTen();
 						NXB XB(tmpname, username, password, listBook);
-						XB.menu(listBook);
+						XB.menu(listBook, tk);
 					}
 					else if (tmptype == "Admin")
 					{
 						Admin ad(username, password);
-						ad.menu(listBook);
+						ad.menu(listBook, tk);
 					}
+					*/
 		}
 
 	}
@@ -300,6 +303,6 @@ void writeFileTaiKhoan(string filename, vector<TaiKhoan*> TK)
 						os << tmptype << endl;
 						TK[i]->writeFile(os);
 					}
-
+		TK[i]->writeFileMess();
 	}
 }

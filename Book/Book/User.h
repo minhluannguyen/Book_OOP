@@ -16,7 +16,7 @@ public:
 	virtual ~User();
 	User(const User&);
 	User(string, string);
-	void menu(DanhSach listBook);
+	virtual void menu(DanhSach&, vector<TaiKhoan*>&);
 	void xemSach(DanhSach listBook);
 	//void TimSach(DanhsachHoadon);
 	virtual string getNameClass();
